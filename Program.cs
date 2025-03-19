@@ -88,7 +88,7 @@ namespace Aula03Colecoes
                     RemoverIdMenor4();
                     break;
                 case 12:
-                    ObterPorNome();
+                    ObterNome();
                     break;
                 case 13:
                     ObterFuncionariosRecentes();
@@ -342,6 +342,22 @@ namespace Aula03Colecoes
             lista = funcionarioApren;
             ExibirLista(); 
           }
+        }
+
+        public static void ObterNome()
+        {
+            Console.WriteLine("Nome:");
+            string nome = Console.ReadLine();
+
+            if(! string.IsNullOrEmpty(nome))
+            {
+                lista = lista.FindAll(X => X.Nome.ToLower().Contains(nome.ToLower()));
+                ExibirLista();
+            }
+            else
+            {
+                Console.WriteLine("Ops!" + "\nNome: "+nome+" não encontrado!");
+            }
         }
 
 
